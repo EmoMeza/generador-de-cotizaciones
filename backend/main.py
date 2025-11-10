@@ -12,6 +12,4 @@ db = client["cotizacion"]
 
 @app.get("/")
 async def root():
-    # Endpoint de prueba con MongoDB
-    count = await db.collection_name.count_documents({})
-    return {"message": f"FastAPI + MongoDB funcionando 🚀, documentos en la colección: {count}"}
+    return {"message": "Generador de Cotizaciones API"}
