@@ -1,0 +1,16 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  mongodb-cotizacion:
+    image: mongo:latest  # Use the latest MongoDB image
+    container_name: mongodb-cotizacion  # Name your container
+    ports:
+      - "27018:27017"  # Expose MongoDB port
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: test  # Set root username
+      MONGO_INITDB_ROOT_PASSWORD: contra  # Set root password
+    volumes:
+      - mongo_data_cotizacion:/data/db  # volumen único para este servicio
+
+volumes:
+  mongo_data_cotizacion:
